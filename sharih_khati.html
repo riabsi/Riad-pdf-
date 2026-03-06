@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الشرح الخطي</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+        
+        body {
+            background-color: #050505;
+            color: #fff;
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 5px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1100px;
+            padding: 30px;
+        }
+
+        .royal-btn {
+            background: #111;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            padding: 25px 15px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1), inset 0 0 10px rgba(212, 175, 55, 0.05);
+            position: relative;
+        }
+
+        .royal-btn:hover {
+            background: #1a1a1a;
+            color: #fff;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.9), inset 0 0 15px rgba(212, 175, 55, 0.3);
+            transform: scale(1.05);
+            border-color: #fff;
+        }
+
+        .royal-btn::after {
+            content: '';
+            position: absolute;
+            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.05); opacity: 0; }
+        }
+
+        #lessons-section {
+            display: none;
+            width: 90%;
+            max-width: 1100px;
+            background: #0f0f0f;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            margin-top: 20px;
+        }
+
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .lesson-link {
+            background: #1a1a1a;
+            color: #ccc;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .lesson-link:hover {
+            background: #d4af37;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            background: #d35400;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>منصة الشرح الخطي</h1>
+        <p style="color: #888;">ملخصات التوجيهي الشاملة - 2026</p>
+    </div>
+
+    <div class="grid-container" id="subjects-grid">
+        <div class="royal-btn" onclick="showLessons()">الثقافة المالية</div>
+        <div class="royal-btn">اللغة العربية</div>
+        <div class="royal-btn">الأحياء</div>
+        <div class="royal-btn">الكيمياء</div>
+        <div class="royal-btn">الرياضيات</div>
+        <div class="royal-btn">اللغة الإنجليزية</div>
+        <div class="royal-btn">تاريخ الأردن</div>
+        <div class="royal-btn">التربية الإسلامية</div>
+        <div class="royal-btn">الحاسوب</div>
+        <div class="royal-btn">الفيزياء</div>
+        <div class="royal-btn">الجغرافيا</div>
+        <div class="royal-btn">علوم الأرض</div>
+    </div>
+
+    <div id="lessons-section">
+        <button class="back-btn" onclick="hideLessons()">← العودة للمواد</button>
+        <h2 style="color: #d4af37; margin-bottom: 25px;">📘 ملخصات الثقافة المالية</h2>
+        <div class="lessons-grid">
+            <a href="lessons/summary_8-12.html" class="lesson-link">صفحة 8 إلى 12</a>
+            <a href="lessons/summary_8-13.html" class="lesson-link">صفحة 8 إلى 13</a>
+            <a href="lessons/summary_13-18.html" class="lesson-link">صفحة 13 إلى 18</a>
+            <a href="lessons/summary_13-20.html" class="lesson-link">صفحة 13 إلى 20</a>
+            <a href="lessons/summary_19-28.html" class="lesson-link">صفحة 19 إلى 28</a>
+            <a href="lessons/summary_21-30.html" class="lesson-link">صفحة 21 إلى 30</a>
+            <a href="lessons/summary_38-43.html" class="lesson-link">صفحة 38 إلى 43</a>
+            <a href="lessons/summary_44-49.html" class="lesson-link">صفحة 44 إلى 49</a>
+            <a href="lessons/summary_50-58.html" class="lesson-link">صفحة 50 إلى 58</a>
+            <a href="lessons/summary_62-68.html" class="lesson-link">صفحة 62 إلى 68</a>
+            <a href="lessons/summary_68-77.html" class="lesson-link">صفحة 68 إلى 77</a>
+            <a href="lessons/summary_77-82.html" class="lesson-link">صفحة 77 إلى 82</a>
+            <a href="lessons/summary_83-89.html" class="lesson-link">صفحة 83 إلى 89</a>
+            <a href="lessons/summary_90-96.html" class="lesson-link">صفحة 90 إلى 96</a>
+            <a href="lessons/summary_97-108.html" class="lesson-link">صفحة 97 إلى 108</a>
+            <a href="lessons/summary_98-108.html" class="lesson-link">صفحة 98 إلى 108</a>
+            <a href="lessons/summary_109-114.html" class="lesson-link">صفحة 109 إلى 114</a>
+            <a href="lessons/summary_115-120.html" class="lesson-link">صفحة 115 إلى 120</a>
+            <a href="lessons/summary_121-130.html" class="lesson-link">صفحة 121 إلى 130</a>
+            <a href="lessons/summary_131-140.html" class="lesson-link">صفحة 131 إلى 140</a>
+            <a href="lessons/summary_140-147.html" class="lesson-link">صفحة 140 إلى 147</a>
+        </div>
+    </div>
+
+    <script>
+        function showLessons() {
+            document.getElementById('subjects-grid').style.display = 'none';
+            document.getElementById('lessons-section').style.display = 'block';
+        }
+        function hideLessons() {
+            document.getElementById('subjects-grid').style.display = 'grid';
+            document.getElementById('lessons-section').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
